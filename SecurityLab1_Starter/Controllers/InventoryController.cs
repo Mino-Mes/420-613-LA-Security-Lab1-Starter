@@ -21,7 +21,7 @@ namespace SecurityLab1_Starter.Controllers
         protected override void OnException(ExceptionContext filterContext)
         {
             filterContext.ExceptionHandled = true;
-
+ //adad
             using (EventLog eventLog = new EventLog("Application"))
             {
                 eventLog.Source = "Application";
