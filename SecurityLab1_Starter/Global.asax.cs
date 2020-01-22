@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SecurityLab1_Starter.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,14 @@ namespace SecurityLab1_Starter
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_Error()
+        {
+
+            var ex = Server.GetLastError();
+            LogUtil lu = new LogUtil();
+            lu.LogtoEventViewer(EventLogEntryType.Error, ex.Message);
         }
     }
 }
