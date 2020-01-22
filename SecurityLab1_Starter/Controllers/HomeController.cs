@@ -12,14 +12,14 @@ namespace SecurityLab1_Starter.Controllers
         {
             return View();
         }
-
+        [Authorize(Users = "testuser2,testuser1")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
+        [Authorize(Users = "testuser2,testuser1")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

@@ -9,13 +9,13 @@ using System.Web.Mvc;
 
 namespace SecurityLab1_Starter.Controllers
 {
+    [Authorize(Users = "testuser2")]
     public class InventoryController : Controller
     {
         // GET: Inventory
         public ActionResult Index()
         {
-             throw new DivideByZeroException();
-            //return View();
+            return View();
         }
 
         protected override void OnException(ExceptionContext filterContext)
